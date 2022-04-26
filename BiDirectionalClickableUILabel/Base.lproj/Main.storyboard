@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BiDirectionalUILabel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5z-9u-e9y">
+                                <rect key="frame" x="0.0" y="762" width="414" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-Py-msH" customClass="GrowingTextView" customModule="GrowingTextView">
+                                        <rect key="frame" x="16" y="8" width="261" height="84"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWp-tu-ZG4">
+                                        <rect key="frame" x="293" y="0.0" width="105" height="100"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Change Text"/>
+                                        <connections>
+                                            <action selector="onButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ayx-xA-zEB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kJ1-Py-msH" secondAttribute="bottom" constant="8" id="3VU-cs-I69"/>
+                                    <constraint firstItem="jWp-tu-ZG4" firstAttribute="top" secondItem="v5z-9u-e9y" secondAttribute="top" id="4vZ-TI-qcy"/>
+                                    <constraint firstItem="kJ1-Py-msH" firstAttribute="leading" secondItem="v5z-9u-e9y" secondAttribute="leading" constant="16" id="GdY-dF-4Dj"/>
+                                    <constraint firstItem="jWp-tu-ZG4" firstAttribute="leading" secondItem="kJ1-Py-msH" secondAttribute="trailing" constant="16" id="MrN-zB-OpH"/>
+                                    <constraint firstAttribute="bottom" secondItem="jWp-tu-ZG4" secondAttribute="bottom" id="PBC-6F-D9m"/>
+                                    <constraint firstAttribute="trailing" secondItem="jWp-tu-ZG4" secondAttribute="trailing" constant="16" id="Q02-qp-afS"/>
+                                    <constraint firstAttribute="height" constant="100" placeholder="YES" id="rfi-bL-9MT"/>
+                                    <constraint firstItem="kJ1-Py-msH" firstAttribute="top" secondItem="v5z-9u-e9y" secondAttribute="top" constant="8" id="vCL-uj-YIu"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHz-wz-HRQ" customClass="CustomLabel" customModule="BiDirectionalUILabel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="OLK-eI-3as"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gHz-wz-HRQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0b9-FO-txt"/>
+                            <constraint firstItem="v5z-9u-e9y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GdT-cl-Idj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v5z-9u-e9y" secondAttribute="trailing" id="MEU-oN-IFv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gHz-wz-HRQ" secondAttribute="trailing" id="So3-Dv-2iW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v5z-9u-e9y" secondAttribute="bottom" id="U1v-8g-phK"/>
+                            <constraint firstItem="gHz-wz-HRQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VR0-2x-jiW"/>
+                            <constraint firstItem="v5z-9u-e9y" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gHz-wz-HRQ" secondAttribute="bottom" id="cIP-Nd-7wW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BottomViewBottomConstraint" destination="U1v-8g-phK" id="NuJ-h0-ncI"/>
+                        <outlet property="customLabel" destination="gHz-wz-HRQ" id="q1X-5Y-g0l"/>
+                        <outlet property="growingTextView" destination="kJ1-Py-msH" id="fHA-l2-pQ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="84"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="kJ1-Py-msH">
+            <size key="intrinsicContentSize" width="-1" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
